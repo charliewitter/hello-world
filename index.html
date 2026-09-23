@@ -3,30 +3,107 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>hello-world</title>
+  <title>Charlie Witter</title>
+  <meta name="description" content="Charlie Witter, a designer learning to build with Claude Code.">
   <style>
+    :root {
+      --pink: #ff48b0;   /* RISO Fluorescent Pink */
+      --ink: #111111;
+      --paper: #fffafc;
+      --soft: #5c5a5b;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --ink: #fdf5f9;
+        --paper: #141213;
+        --soft: #b3aeb1;
+      }
+    }
+
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
       min-height: 100vh;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 16px;
-      padding: 24px;
-      box-sizing: border-box;
-      font-family: system-ui, sans-serif;
-      background: #fafafa;
-      color: #111;
-      text-align: center;
+      padding: 24px 16px;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, "Helvetica Neue", sans-serif;
+      line-height: 1.5;
     }
-    h1 { margin: 0; }
-    img { max-width: 100%; width: 400px; height: auto; border-radius: 8px; }
+
+    main {
+      width: 100%;
+      max-width: 30rem;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    img {
+      width: 160px;
+      height: 160px;
+      border: 4px solid var(--pink);
+      image-rendering: pixelated;   /* keeps pixel art crisp */
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 7vw, 2.75rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    h1 span {
+      background: var(--pink);
+      color: #111111;
+      padding: 0 0.15em;
+    }
+
+    p { margin: 0; font-size: 1.125rem; }
+
+    .colour {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--soft);
+    }
+
+    .swatch {
+      width: 28px;
+      height: 28px;
+      flex: none;
+      background: var(--pink);
+    }
+
+    a.social {
+      align-self: flex-start;
+      padding: 12px 20px;
+      background: var(--pink);
+      color: #111111;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    a.social:hover { background: var(--ink); color: var(--pink); }
+
+    a.social:focus-visible {
+      outline: 3px solid var(--ink);
+      outline-offset: 3px;
+    }
   </style>
 </head>
 <body>
-  <h1>hello-world</h1>
-  <p>My first repository! 👋 A small milestone on the way to learning git and GitHub.</p>
-  <img src="meme.png" alt="It's just print(&quot;hello world&quot;)">
+  <main>
+    <img src="charlie.png" alt="Pixel-art portrait of Charlie: dark hair, glasses with blue lenses, on a red background">
+    <h1>Hi, my name is <span>Charlie Witter</span>.</h1>
+    <p>I'm a designer learning to build with Claude Code.</p>
+    <p class="colour"><span class="swatch" aria-hidden="true"></span>My favourite colour is RISO Fluorescent Pink.</p>
+    <a class="social" href="https://www.linkedin.com/in/charliewitter">Find me on LinkedIn →</a>
+  </main>
 </body>
 </html>
